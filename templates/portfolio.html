@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой портфель</title>
+</head>
+<body>
+    <h1>Мой инвестиционный портфель</h1>
+    <a href="/">На главную</a>
+    
+    {% if portfolio %}
+        <ul>
+        {% for item in portfolio %}
+            <li>{{ item.ticker }} - {{ item.price }} руб.</li>
+        {% endfor %}
+        </ul>
+        <a href="/portfolio/clear">Очистить портфель</a>
+    {% else %}
+        <p>Портфель пуст</p>
+    {% endif %}
+</body>
+</html>
